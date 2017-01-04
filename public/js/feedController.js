@@ -1,10 +1,6 @@
-var app = angular.module('myApp', []);
+var app = angular.module('sportivi', []);
 
-app.controller('feedCtrl', function($scope, $http) {
+app.controller('feedCtrl', function($scope) {
 
     $scope.students = ["Dani,AMit"];
-    $http.get("welcome.htm")
-        .then(function(response) {
-            $scope.myWelcome = response.data;
-        });
 });
