@@ -41,8 +41,15 @@
 				document.getElementById("panel-body").style.backgroundColor = "black";
 				document.getElementById("row").style.backgroundColor = "black";
 			}
-
 		}	
+
+		//function gil() {
+			alert("sdf");
+			$.textReader.read("Hello World", "en", function (){
+        		alert("Speaking complete");
+    		});
+		//}
+
 	</script>
 </head>
 <body>
@@ -57,6 +64,7 @@
 					<a href="javascript:increaseFontSize('container');"><button>+</button></a>
 					<a href="javascript:decreaseFontSize('container');"><button>-</button></a>
 					<a href="javascript:changeColor('controller');"><button>COLOR</button></a>
+					<!-- <a href="javascript:gil();"><button>wow</button></a> -->
             </div>
             <div class="panel-body" id="panel-body">
               <div class="row" id="row">
