@@ -7,38 +7,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-		function increaseFontSize(objId) {
-			obj = document.getElementById("gil");
-			//get current font size of obj
-			currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
-			if(currentSize <= 1.5) {
-				obj.style.fontSize = (currentSize + .1) + "em";
-			}
-		}	
-
-		function decreaseFontSize(objId) {
-			obj = document.getElementById("gil");
-			//get current font size of obj
-			currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
-			if(currentSize > 1) {
-				obj.style.fontSize = (currentSize - .1) + "em";
-			}
-	}	
-	</script>
 </head>
 <body>
 <div ng-controller="profileCtrl">
-<div class="container" id="gil" style="font-size: 1em"
+<div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
-            <A href="edit.html" class="pull-right">Edit Profile</A>
+            <A href="edit.html" class="pull-right">Save</A>
               <h3 class="panel-title">Gil Itzhaky</h3>
-          		 	<div id="mydiv" style="font-size: 1em">some text here</div>
-					<a href="javascript:increaseFontSize('gil');"><button>+</button></a>
-					<a href="javascript:decreaseFontSize('gil');"><button>-</button></a>
+          		 
             </div>
             <div class="panel-body">
               <div class="row">
@@ -49,7 +28,7 @@
                     <tbody>
                       <tr>
                         <td>Email:</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                        <td><input type="email" placeholder="info@support.com"</td>
                       </tr>
                       <tr>
                         <td>Date of birth:</td>
@@ -61,7 +40,7 @@
                       </tr>
                         <tr>
                         <td>Address:</td>
-                        <td>Jerusalem, Israel</td>
+                        <td><input type="text" placeholder="Jerusalem, Israel"></td>
                       </tr>
                     </tbody>
                   </table>
