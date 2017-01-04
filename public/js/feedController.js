@@ -4,3 +4,5 @@ app.controller('feedCtrl', function($scope) {
 
     $scope.students = ["Dani,AMit"];
 });
+
+app.controller('mySport')
