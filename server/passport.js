@@ -4,7 +4,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 // load up the user model
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-var connection = require('./db/sportivDB.js');
+var connection = require('../db/sportivDB.js');
 
 module.exports = function(passport) {
 
