@@ -1,3 +1,3 @@
-var app = angular.module('sportivi', []);
-
-
+// var app = angular.module('sportivi', []);
+//
+//
