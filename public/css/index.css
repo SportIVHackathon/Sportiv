@@ -1,3 +1,11 @@
-span, input{
-    vertical-align: top;
+textarea
+{
+    width: 200px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.form-horizontal .control-label{
+    /* text-align:right; */
+    text-align:left;
 }
