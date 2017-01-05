@@ -91,6 +91,13 @@ var app = angular.module('sportivi', [])
             $scope.showPost = false;
             $scope.showProfile = true;
         }
+
+        $scope.toHome = function () {
+            $scope.showProfile = false;
+            $scope.showFeed = true;
+            $scope.showPost = true;
+
+        }
     })
 
 
