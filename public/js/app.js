@@ -18,7 +18,7 @@ var app = angular.module('sportivi', [])
 
         $scope.chosenCity = "";
 
-        $scope.textareaValue = "";
+        $scope.time = ""
 
         $scope.ageGroup = "";
 
@@ -36,7 +36,7 @@ var app = angular.module('sportivi', [])
                 city: $scope.chosenCity,
                 date: $scope.date,
                 age: $scope.age,
-                textarea: $scope.textareaValue
+                time: $scope.time
             };
 
             var url = "";
