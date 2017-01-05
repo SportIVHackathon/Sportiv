@@ -64,11 +64,13 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right">
+
             	<li><a href="#"><img ng-src="images/hackathon-02.svg" height="28px" mergin-left="50px"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-03.svg" height="25px" mergin-left="50px" ng-click="toProfile()"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-06.svg" height="25px" mergin-left="50px"></a></li>
+
             </ul>
         </div>
     </div>
@@ -93,12 +95,9 @@
             </div>
         </div>
         <div class="col-sm-7">
-
             <div class="row" ng-show= "showPost" ng-controller = "postCtrl">
                 <div class="col-sm-9">
                     <div class="alert alert-info">
-
-
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <strong>Hello, what exercise would you like to do?</strong><br><br>
@@ -163,15 +162,20 @@
                 </div>
                 <div class="col-sm-3">
 
+
                   <img ng-src="images/icon_edit.svg" width="120" height="120"><br><br><br>
                     <button type="submit" class="btn btn-primary" ng-click="send()">Submit</button>
+
                 </div>
             </div>
             <div class="row" ng-show= "showFeed">
                 <div class="col-sm-12">
                     <div class="well">
-                        <div ng-include="'static/views/feed.html'"></div>
+                        <div ng-include="'views/feed.html'"></div>
+                        <div ng-include="'views/profile.html'"></div>
+                        
                     </div>
+
                 </div>
             </div>
         </div>

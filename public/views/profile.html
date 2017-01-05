@@ -1,70 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script>
-		function increaseFontSize(objId) {
-			obj = document.getElementById(objId);
-			//get current font size of obj
-			currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
-			if(currentSize <= 1.5) {
-				obj.style.fontSize = (currentSize + .1) + "em";
-			}
-		}	
-
-		function decreaseFontSize(objId) {
-			obj = document.getElementById(objId);
-			//get current font size of obj
-			currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
-			if(currentSize > 1) {
-				obj.style.fontSize = (currentSize - .1) + "em";
-			}
-		}	
-
-		function changeColor(objId) {
-			var textColor = document.getElementById(objId).style.color;
-			if(textColor.localeCompare("yellow") == 0) {
-				document.getElementById("controller").style.color = "black";
-				document.getElementById("controller").style.backgroundColor = "white"; //check if needed - I THINK NOT!
-				document.getElementById("table").style.backgroundColor = "white";
-				document.getElementById("panel-body").style.backgroundColor = "white";
-				document.getElementById("row").style.backgroundColor = "white";
-			} else {
-				document.getElementById("controller").style.color ="yellow";
-				document.getElementById("controller").style.backgroundColor = "black"; //check if needed - I THINK NOT!
-				document.getElementById("table").style.backgroundColor = "black";
-				document.getElementById("panel-body").style.backgroundColor = "black";
-				document.getElementById("row").style.backgroundColor = "black";
-			}
-		}	
-
-		//function gil() {
-			alert("sdf");
-			$.textReader.read("Hello World", "en", function (){
-        		alert("Speaking complete");
-    		});
-		//}
-
-	</script>
-</head>
-<body>
-<div ng-controller="profileCtrl" id="controller">
-<div class="container" style="font-size: 1em" id="container">
+<div ng-controller="profileCtrl" ng-show="showProfile">
+<div class="container" style="font-size: 1em" id="profile">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
             <A href="edit.html" class="pull-right">Edit Profile</A>
               <h3 class="panel-title">Gil Itzhaky</h3>
-					<a href="javascript:increaseFontSize('container');"><button>+</button></a>
-					<a href="javascript:decreaseFontSize('container');"><button>-</button></a>
-					<a href="javascript:changeColor('controller');"><button>COLOR</button></a>
-					<!-- <a href="javascript:gil();"><button>wow</button></a> -->
+
             </div>
             <div class="panel-body" id="panel-body">
               <div class="row" id="row">
@@ -99,8 +41,7 @@
       </div>
     </div>
 </div>
-</body>
-</html>
+
 
 
 
