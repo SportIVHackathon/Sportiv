@@ -147,5 +147,20 @@ var app = angular.module('sportivi', [])
 
         $scope.showFeed = true;
         $scope.showPost = true;
+        $scope.showProfile = false;
 
-    })
+        $scope.toProfile = function () {
+            $scope.showFeed = false;
+            $scope.showPost = false;
+            $scope.showProfile = true;
+        };
+
+        $scope.toHome = function () {
+            $scope.showProfile = false;
+            $scope.showFeed = true;
+            $scope.showPost = true;
+
+        }
+    });
+
+

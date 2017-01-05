@@ -1,9 +1,4 @@
-textarea
-{
-    width: 200px;
-    height: 100px;
-    vertical-alnign: middle;
-}
+
 
 .form-horizontal .control-label{
     /* text-align:right; */
@@ -51,4 +46,9 @@ textarea
 
 .rightMenu {
 	font-size: 10px;
+}
+
+input, select{
+    background-color:#666;
+    color: #FFF;
 }
