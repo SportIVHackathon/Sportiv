@@ -84,4 +84,47 @@ var app = angular.module('sportivi', [])
 
         $scope.showFeed = false;
         $scope.showPost = false;
+        $scope.showProfile = true;
+
+        // function increaseFontSize() {
+        //     obj_profile = document.getElementById("profile");
+        //     //get current font size of obj
+        //     currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
+        //     if(currentSize <= 1.5) {
+        //         obj.style.fontSize = (currentSize + .1) + "em";
+        //     }
+        // }   
+
+
+        // function decreaseFontSize(objId) {
+        //     obj = document.getElementById(objId);
+        //     //get current font size of obj
+        //     currentSize = parseFloat(obj.style.fontSize); //parseFloat gives you just the numerical value, i.e. strips the 'em' bit away
+        //     if(currentSize > 1) {
+        //         obj.style.fontSize = (currentSize - .1) + "em";
+        //     }
+        // }   
+
+        // function changeColor(objId) {
+        //     var textColor = document.getElementById(objId).style.color;
+        //     if(textColor.localeCompare("yellow") == 0) {
+        //         document.getElementById("controller").style.color = "black";
+        //         document.getElementById("controller").style.backgroundColor = "white"; //check if needed - I THINK NOT!
+        //         document.getElementById("table").style.backgroundColor = "white";
+        //         document.getElementById("panel-body").style.backgroundColor = "white";
+        //         document.getElementById("row").style.backgroundColor = "white";
+        //     } else {
+        //         document.getElementById("controller").style.color ="yellow";
+        //         document.getElementById("controller").style.backgroundColor = "black"; //check if needed - I THINK NOT!
+        //         document.getElementById("table").style.backgroundColor = "black";
+        //         document.getElementById("panel-body").style.backgroundColor = "black";
+        //         document.getElementById("row").style.backgroundColor = "black";
+        //     }
+        // }   
+
     })
+
+
+    // <a href="javascript:increaseFontSize('container');"><button>+</button></a>
+    // <a href="javascript:decreaseFontSize('container');"><button>-</button></a>
+    // <a href="javascript:changeColor('controller');"><button>COLOR</button></a>
