@@ -109,22 +109,26 @@
 
                                 <strong>Hello, what exercise would you like to do?</strong><br><br>
                                 <div class="row">
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-6"><strong>I Would Like to:</strong></div>
-                                <div class="col-sm-6">
+                                    <div class="col-sm-1"></div>
+                                <div class="col-sm-4">
 
                                     <select class="form-control input-sm" ng-model="chosenSport" ng-options="sport for sport in sports">
                                         <option value="">-- choose sport --</option>
                                      </select>
 
                                 </div>
+
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="rows">
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/hackathon-05.svg" height="25px" margin-left="50px">
+                                    <img ng-src="images/icon_clock.svg" height="25px" margin-left="50px">
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-4">
                                     <div class='input-group date' id='datetimepicker1'>
                                         <input type='text' class="form-control input-sm" ng-model="date2">
                                         <span class="input-group-addon" >
@@ -132,10 +136,11 @@
                     </span>
                                     </div>
                                 </div>
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
                                     <strong>at</strong>
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-4">
                                     <div class="input-group clockpicker">
                                         <input type="text" class="form-control input-sm" value="09:30">
                                         <span class="input-group-addon">
@@ -147,20 +152,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/icon_location.svg" height="25px" margin-left="50px">
+                                    <img ng-src="images/icon_location.svg" height="30px" margin-left="50px">
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-4">
 
                                     <select class="form-control input-sm" ng-model="chosenCity" ng-options="city for city in cities">
                                         <option value="">-- choose city --</option>
                                     </select>
 
                                 </div>
+                                <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
                                     <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-4">
 
                                     <select class="form-control input-sm" ng-model="ageGroup" ng-options="age for age in ages">
                                         <option value="">-- choose age --</option>
@@ -172,15 +179,14 @@
                     </div>
                 </div>
                 <div class="col-sm-3 submit">
-                    <img ng-src="images/icon_edit.svg" width="120" height="120"><br><br><br>
-                    <button type="submit" class="btn btn-primary" ng-click="send()">Submit</button>
+                    <img ng-src="images/unnamed.gif"><br><br><br>
+                    <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
                 </div>
 
             </div>
-
+            <div ng-include="'views/feed.html'" class="col-sm-12"></div>
+            <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
         </div>
-        <div ng-include="'views/feed.html'" class="col-sm-9"></div>
-        <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
         <div class="col-sm-2 well">
                 <!-- weather widget start --><a href="//www.booked.net/weather/jerusalem-18396"><img src="//w.bookcdn.com/weather/picture/31_18396_1_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_3.png?scode=124&domid=" /></a><!-- weather widget end -->
             <br>
