@@ -27,6 +27,15 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
 
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/login');
+}
 
 app.use('/static', express.static('public'));
 app.get('/', isLoggedIn,  function (req, res) {
@@ -55,15 +64,10 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
-function isLoggedIn(req, res, next) {
+app.get("/getUserDetails", isLoggedIn ,  function (req, res){
+    res.send(req.user);
+});
 
-    // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/login');
-}
 
 
 app.listen(port, ip);
