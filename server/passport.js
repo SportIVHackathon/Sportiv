@@ -14,11 +14,10 @@ module.exports = function(passport) {
     });
 
     passport.deserializeUser(function(id, done) {
-        connection.query("SELECT * FROM Users WHERE id = ? ",[user_id], function(err, rows){
+        connection.query("SELECT * FROM Users WHERE user_id = ? ",[id], function(err, rows){
             done(err, rows[0]);
         });
     });
-
     passport.use(
         'local-login',
         new LocalStrategy({
@@ -27,21 +26,23 @@ module.exports = function(passport) {
                 passwordField : 'password',
                 passReqToCallback : true // allows us to pass back the entire request to the callback
             },
-            function(req, username, password, done) { // callback with email and password from our form
-                console.log(username);
-                console.log(password);
-                connection.query("SELECT * FROM users WHERE user_name = ?",[username], function(err, rows){
+            function(req, email, password, done) { // callback with email and password from our form
+                console.log("user inserted email: ", email);
+                console.log("user inserted password: ", password);
+                connection.query("SELECT * FROM Users WHERE email = ?",[email], function(err, rows){
                     if (err)
                         return done(err);
+                    console.log(rows);
                     if (!rows.length) {
-                        return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+                        return done(null, false);
                     }
+                    if (password.localeCompare(rows[0].password)){
+                        console.log("wrong login");
+                        return done(null, false);
 
-                    // if the user is found but the password is wrong
-                    if (!bcrypt.compareSync(password, rows[0].password))
-                        return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-
+                    }
                     // all is well, return successful user
+                    console.log("Good login");
                     return done(null, rows[0]);
                 });
             })

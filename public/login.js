@@ -1,12 +1,13 @@
-var loginApp = angular.module('loginApp', ['$http']);
+var loginApp = angular.module('loginApp', []);
 
 loginApp.controller('loginAppCtrl', function($scope, $http) {
     $scope.email = "";
     $scope.password = "";
 
+
     $scope.submit = function(){
         var data = {
-            email: $scope.email,
+            username: $scope.email,
             password: $scope.password
 
         };
@@ -17,12 +18,17 @@ loginApp.controller('loginAppCtrl', function($scope, $http) {
             }
         };
 
-        $http.post("/login", data, config)
+        $http.post("/login", data)
             .then(
                 function(response){
-                    console.log(response);
+                    if(response.data.success){
+                        console.log("Good login");
+                        window.location.href="/";
+                    }
+
                 },
                 function(response){
+                    console.log("ERROR");
                     console.log(response);
                 }
             );

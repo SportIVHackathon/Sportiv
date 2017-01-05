@@ -16,9 +16,20 @@ var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 
 require('./server/passport.js')(passport);
 
+app.use(flash());
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'vidyapathaisalwaysrunning',
+    resave: true,
+    saveUninitialized: true
+} )); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());
+
 
 app.use('/static', express.static('public'));
-app.get('/', function (req, res) {
+app.get('/', isLoggedIn,  function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
@@ -27,7 +38,6 @@ app.get('/login', function (req, res) {
 });
 
 app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/',
         failureRedirect : '/login',
         failureFlash : true
     }),
@@ -37,7 +47,7 @@ app.post('/login', passport.authenticate('local-login', {
         } else {
             req.session.cookie.expires = false;
         }
-        res.redirect('/');
+        res.send({success:true});
     });
 
 app.get('/logout', function(req, res) {
@@ -52,7 +62,7 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/login');
 }
 
 
