@@ -82,6 +82,13 @@ var app = angular.module('sportivi', [])
     })
     .controller('divOptionsController', function($scope) {
 
-        $scope.showFeed = false;
-        $scope.showPost = false;
+        $scope.showFeed = true;
+        $scope.showPost = true;
+
+        $scope.toProfile = function () {
+            $scope.showFeed = false;
+            $scope.showPost = false;
+        }
+
+
     })
