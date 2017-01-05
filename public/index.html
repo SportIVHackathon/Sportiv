@@ -12,6 +12,12 @@
     <script src="js/app.js"></script>
     <script src="js/feedController.js"></script>
 
+    <script src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <link rel="stylesheet" href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
     <style>
         /* Set black background color, white text and some padding */
         footer {
@@ -84,94 +90,83 @@
         <div class="col-sm-7">
 
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-9">
                     <div class="alert alert-info">
 
 
-                        <!--<form class="form-horizontal">-->
-                            <!--<div class="form-group">-->
-                                <!--<strong>Hello, what exercise would you like to do?</strong><br>-->
-                                <!--<label class="control-label col-sm-6" for="email">I Would Like to:</label>-->
-                                <!--<div class="col-sm-6">-->
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <strong>Hello, what exercise would you like to do?</strong><br><br>
+                                <div class="col-sm-6"><strong>I Would Like to:</strong></div>
+                                <div class="col-sm-4">
 
-                    <!--<select class="form-control" ng-model="chosenSport" ng-options="sport for sport in sports">-->
-                        <!--<option value="">&#45;&#45; choose sport &#45;&#45;</option>-->
-                     <!--</select>-->
-
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="form-group">-->
-                                <!--<label class="control-label col-sm-6" for="date">On which date?</label>-->
-                                <!--<div class="col-sm-6">-->
-                                    <!--<div class='input-group date' id='datetimepicker1'>-->
-                                        <!--<input type='text' class="form-control" />-->
-                                        <!--<span class="input-group-addon">-->
-                        <!--<span class="glyphicon glyphicon-calendar"></span>-->
-                    <!--</span>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<script>$(function () {-->
-                                <!--$('#datetimepicker1').datepicker();-->
-                            <!--});</script>-->
-                            <!--<div class="form-group">-->
-                                <!--<div class="col-sm-offset-2 col-sm-10">-->
-                                    <!--<div class="checkbox">-->
-                                        <!--<label><input type="checkbox"> Remember me</label>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="form-group">-->
-                                <!--<div class="col-sm-offset-2 col-sm-10">-->
-                                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</form><div class="container">-->
-                        <!--<div class="row">-->
-                            <!--<div class='col-sm-6'>-->
-                                <!--<div class="form-group">-->
-                                    <!--<div class='input-group date' id='datetimepicker1'>-->
-                                        <!--<input type='text' class="form-control" />-->
-                                        <!--<span class="input-group-addon">-->
-                        <!--<span class="glyphicon glyphicon-calendar"></span>-->
-                    <!--</span>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<script type="text/javascript">-->
-                                <!--$(function () {-->
-                                    <!--$('#datetimepicker1').datepicker()-->
-                                <!--});-->
-                            <!--</script>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-
-
-                        <form>
-                            Hello, what exercise would you like to do?<br>
-                            I Would Like to
-                            <span class="nullable">
-                    <select ng-model="MySport" ng-options="sport for sport in sports">
+                    <select class="form-control input-sm" ng-model="chosenSport" ng-options="sport for sport in sports">
                         <option value="">-- choose sport --</option>
                      </select>
-                </span>
-                            <br>On which date?
-                            <input type="date" name="input" ng-model="date"
-                                   placeholder="yyyy-MM-dd" min="2013-01-01" required/>
-                            <br>In what time?
-                            <input type="time" name="input" ng-model="time" required/>
-                            <br>Where?
-                            <select ng-model="chosenCity" ng-options="city for city in cities">
-                                <option value="">-- choose City --</option>
-                            </select>
-                            <br>Say something nice:<br>
-                            <textarea id="textareaEdit" ng-model="textareaValue"></textarea><br>
-                            <br>
-                            <button type="submit" class="btn btn-default" ng-click="send()">Submit</button>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-1">
+                                    <img ng-src="images/hackathon-05.svg" height="25px" margin-left="50px">
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control input-sm" ng-model="date2">
+                                        <span class="input-group-addon" >
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <strong>at</strong>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group clockpicker">
+                                        <input type="text" class="form-control input-sm" value="09:30">
+                                        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-1">
+                                    <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <select class="form-control input-sm" ng-model="chosenCity" ng-options="city for city in cities">
+                                        <option value="">-- choose city --</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-sm-1">
+                                    <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <select class="form-control input-sm" ng-model="ageGroup" ng-options="age for age in ages">
+                                        <option value="">-- choose age --</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+
+
+                        {{date2}}
+
 
                         </form>
                     </div>
+                </div>
+                <div class="col-sm-3">
+
+                  <img ng-src="images/hackathon-01.jpg" height="100px"><br>
+                    <button type="submit" class="btn btn-default" ng-click="send()">Submit</button>
                 </div>
             </div>
             <div class="row">
