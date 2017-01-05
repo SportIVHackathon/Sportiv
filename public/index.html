@@ -168,11 +168,11 @@
 
                 </div>
             </div>
-            <div class="row" ng-show= "showFeed">
+            <div class="row" >
                 <div class="col-sm-12">
                     <div class="well">
-                        <div ng-include src="'views/feed.html'"></div>
-                        <div ng-include src="'views/profile.html'"></div>
+                        <div ng-show= "showFeed" ng-include src="'views/feed.html'"></div>
+                        <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
                         
                     </div>
 

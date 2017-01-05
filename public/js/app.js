@@ -84,7 +84,7 @@ var app = angular.module('sportivi', [])
 
         $scope.showFeed = true;
         $scope.showPost = true;
-        $scope.showPost = false;
+        $scope.showProfile = false;
 
         $scope.toProfile = function () {
             $scope.showFeed = false;
