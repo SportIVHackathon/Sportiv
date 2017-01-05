@@ -11,24 +11,30 @@ textarea
 }
 
 .navbar {
-    background-color: #066A91;
+    background-color: #212666;
     color: white;
-    border-color: #066A91;
+    border-color: #212666;
 }
 
 .footer {
-    background-color: #066A91;
+    background-color: #212666;
     color: white;
-    border-color: #066A91;
+    border-color: #212666;
     padding: 15px;
+    margin-right: 1px;
 }
 
 
 
 #gil {
-	background-color : #066A91; 
+	background-color : #212666; 
 }
 
+#underline {
+	background-color : #212666;
+	color: #ffffff;
+	border: 0;
+}
 
 
 #greet {
@@ -41,4 +47,8 @@ textarea
 #sideName {
 	font-size: 30px;
 	font-family: "Open Sans";
+}
+
+.rightMenu {
+	font-size: 10px;
 }
