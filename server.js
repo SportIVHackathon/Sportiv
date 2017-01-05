@@ -68,6 +68,14 @@ app.get("/getUserDetails", isLoggedIn ,  function (req, res){
     res.send(req.user);
 });
 
+app.get("/getEvents",  function (req, res){
+
+    db.query('SELECT * from Events', function(err, rows) {
+        if (err) res.send(err);
+        res.send(rows);
+    });
+});
+
 
 
 app.listen(port, ip);
