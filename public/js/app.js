@@ -2,7 +2,7 @@ var app = angular.module('sportivi', [])
     .controller('chatCtrl', function($scope) {
 
     })
-    .controller('feedCtrl', function($scope, $http) {
+    .controller('postCtrl', function($scope, $http) {
 
         $scope.posts = ["walk", "rffffn", "play football", "play basketball"];
 
@@ -50,6 +50,10 @@ var app = angular.module('sportivi', [])
 
 
     })
+    .controller('feed', function($scope, $http) {
+
+
+    })
     .controller('greetingsCtrl', function($scope,$http) {
         $http.get("/getUserDetails")
             .then(
@@ -75,6 +79,9 @@ var app = angular.module('sportivi', [])
     .controller('profileCtrl', function($scope) {
 
         $scope.students = ["Dani,AMit"];
-    });
+    })
+    .controller('divOptionsController', function($scope) {
 
-
+        $scope.showFeed = false;
+        $scope.showPost = false;
+    })
