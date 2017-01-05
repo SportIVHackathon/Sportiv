@@ -88,48 +88,6 @@ var app = angular.module('sportivi', [])
                     console.log(response);
                 }
             );
-
-
-        // $scope.events = [
-        //     {
-        //         event_id:1,
-        //         event_time: "16:30",
-        //         event_kind: "bike ride",
-        //         event_date: "1.1.2017",
-        //         event_city: "Jerusalem",
-        //         event_creator: "Amit Arie",
-        //         creator_image: "static/images/users_images/1.jpg"
-        //     },
-        //     {
-        //         event_id:2,
-        //         event_time: "07:00",
-        //         event_date: "2.1.2017",
-        //         event_kind: "run",
-        //         event_city: "Jerusalem",
-        //         event_creator: "Gil Itzhaky",
-        //         creator_image: "static/images/users_images/3.jpg"
-        //     },
-        //     {
-        //         event_id: 3,
-        //         event_time: "19:30",
-        //         event_kind: "yoga_class",
-        //         event_date: "3.1.2017",
-        //         event_city: "Jerusalem",
-        //         event_creator: "Dani Ionin",
-        //         creator_image: "static/images/users_images/4.jpg"
-        //     },            {
-        //         event_id:4,
-        //         event_time: "07:00",
-        //         event_date: "2.1.2017",
-        //         event_kind: "walk",
-        //         event_city: "Jerusalem",
-        //         event_creator: "Shana Rotter",
-        //         creator_image: "static/images/users_images/2.jpg"
-        //     }
-        //     ];
-
-
-
     })
     .controller('greetingsCtrl', function($scope,$http) {
 

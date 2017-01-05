@@ -77,6 +77,15 @@ app.get("/getEvents",  function (req, res){
 });
 
 
+app.post("/newEvent",isLoggedIn,  function(req,res){
+    var event_creator = req.user;
+    var event_kind = req.body.event_kind;
+    console.log("event_creator: ", event_creator );
+    console.log("event_kind: ", event_kind );
+
+});
+
+
 
 app.listen(port, ip);
 
