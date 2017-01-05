@@ -23,6 +23,22 @@ textarea
     padding: 15px;
 }
 
+
+
 #gil {
 	background-color : #066A91; 
+}
+
+
+
+#greet {
+	margin-top: 35px;
+	margin-right: 115px;
+	font-size: 12px;
+	font-family: "Open Sans";
+}
+
+#sideName {
+	font-size: 30px;
+	font-family: "Open Sans";
 }
