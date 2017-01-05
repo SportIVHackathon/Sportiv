@@ -4,15 +4,15 @@ var app = angular.module('sportivi', [])
     })
     .controller('postCtrl', function($scope, $http) {
 
-        $scope.posts = ["walk", "rffffn", "play football", "play basketball"];
+        $scope.posts = ["Walk", "Play Football", "Basketball"];
 
-        $scope.sports = ["walk", "run", "play football", "play basketball"];
+        $scope.sports = ["Walk", "Football", "Basketball", "Basketball", "Swim", "Tennis", "Yoga Class",
+            "Run", "Bike Ride"];
 
         $scope.cities = ["Jerusalem", "Tel-Aviv", "Beer-Sheva", "Haifa"];
 
         $scope.ages = ["18 - 24", "25 - 30", "31 - 40", "41+"];
 
-        $scope.date = new Date(2010, 11, 28, 14, 57);
         $scope.date2 = "";
         $scope.chosenSport = "";
 
@@ -34,10 +34,14 @@ var app = angular.module('sportivi', [])
             var data = {
                 sport: $scope.chosenSport,
                 city: $scope.chosenCity,
-                date: $scope.date,
+                date: $scope.date2,
                 age: $scope.age,
                 time: $scope.time
             };
+
+
+            console.log("Data to request: ");
+            console.log(data);
 
             var url = "newEvent";
             $http.post(url, data).then(function successCallback(response) {
@@ -56,29 +60,39 @@ var app = angular.module('sportivi', [])
             .then(
                 function(response){
                     $scope.events = [];
-                    $scope.events = response.data;
+                    angular.extend($scope.events,response.data);
+
                     $scope.colors = [];
                     for ( var i = 0; i < $scope.events.length; i++ ){
                         var color = {"background-color": 'red'};
-                        if(!$scope.events[i].event_kind.localeCompare("yoga_class")){
+                        if(!$scope.events[i].event_kind.localeCompare("Yoga Class")){
                             color = {"background-color": '#3C61A5'};
                             $scope.events[i].event_icon = "static/images/icon_yoga.svg"
                         }
-                        else if(!$scope.events[i].event_kind.localeCompare("run")){
+                        else if(!$scope.events[i].event_kind.localeCompare("Run")){
                             color = {"background-color": '#8B1E35'};
                             $scope.events[i].event_icon = "static/images/icon_run.svg"
 
                         }
-                        else if(!$scope.events[i].event_kind.localeCompare("bike ride")){
+                        else if(!$scope.events[i].event_kind.localeCompare("Bike Ride")){
                             color = {"background-color": '#EA9047'};
                             $scope.events[i].event_icon = "static/images/icon_bike.svg"
 
                         }
-                        else if(!$scope.events[i].event_kind.localeCompare("walk")){
+                        else if(!$scope.events[i].event_kind.localeCompare("Walk")){
                             color = {"background-color": '#00AAA0'};
                             $scope.events[i].event_icon = "static/images/icon_walk.svg"
                         }
 
+                        else if(!$scope.events[i].event_kind.localeCompare("Football")){
+                            color = {"background-color": '#47aa47'};
+                            $scope.events[i].event_icon = "static/images/footballiCon.png"
+                        }
+
+                        else if(!$scope.events[i].event_kind.localeCompare("Basketball")){
+                            color = {"background-color": '#aa160f'};
+                            $scope.events[i].event_icon = "static/images/basketBall.png"
+                        }
 
                         $scope.colors.push(color);
                     }
