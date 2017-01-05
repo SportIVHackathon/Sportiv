@@ -1,0 +1,137 @@
+/*
+main blue #212666
+red #8B1E35
+green #00AAA0
+orange #EA9047
+light blue #3C61A5
+gray #9B9B9B*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 38px;
+    color: #212666;
+    line-height: 50px;
+    font-weight: 900;
+}
+
+img {
+    max-width: 100%;
+}
+
+.navbar-right:hover {
+    color: #fff
+}
+
+
+/***** Top menu *****/
+
+.navbar {
+    padding-top: 10px;
+    background: #212666;
+    border: 0;
+    padding-left: 70px
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+
+/***** Top content *****/
+
+fieldset {
+    padding-top: 15px;
+}
+
+.inner-bg {
+    padding: 50px 0 0px 0;
+}
+
+.form-top {
+    overflow: hidden;
+    padding: 0 0px 15px 25px;
+    background: #fff;
+}
+
+.form-bottom {
+    padding: 25px 25px 30px 25px;
+    background: #fff;
+    text-align: right;
+    color: #212666;
+}
+
+.btn-next, .btn-previous, .btn {
+    background-color: #8B1E35;
+    color: #fff;
+}
+
+.interests {
+    text-align: left;
+}
+
+.requirements {
+    text-align: left;
+    border-left: 1px solid #9B9B9B;
+}
+
+.btn-next, .btn-previous, .btn:hover {
+    background-color: #8B1E35;
+    color: #fff;
+}
+
+form.registration-form fieldset {
+    display: none;
+}
+
+::placeholder {
+    color: #212666;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.gender {
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    margin-bottom: 0;
+}
+
+
+/*html {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 1054px;
+    height: 1054px;
+}*/
+
+.photo {
+    text-align: left;
+}
+
+label {
+    font-weight: 400;
+}
+
+.birthday {
+    position: relative;
+    padding-top: 50px;
+    text-align: center;
+}

@@ -71,4 +71,7 @@ input, select{
     border : 0;
 }
 
-
+.well{
+    background-color : #fff;
+    border :0;
+}
