@@ -2,10 +2,43 @@ textarea
 {
     width: 200px;
     height: 100px;
-    vertical-align: middle;
+    vertical-alnign: middle;
 }
 
 .form-horizontal .control-label{
     /* text-align:right; */
     text-align:left;
+}
+
+.navbar {
+    background-color: #066A91;
+    color: white;
+    border-color: #066A91;
+}
+
+.footer {
+    background-color: #066A91;
+    color: white;
+    border-color: #066A91;
+    padding: 15px;
+}
+
+
+
+#gil {
+	background-color : #066A91; 
+}
+
+
+
+#greet {
+	margin-top: 35px;
+	margin-right: 115px;
+	font-size: 12px;
+	font-family: "Open Sans";
+}
+
+#sideName {
+	font-size: 30px;
+	font-family: "Open Sans";
 }
