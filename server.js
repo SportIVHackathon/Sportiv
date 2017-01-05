@@ -77,12 +77,28 @@ app.get("/getEvents",  function (req, res){
 });
 
 
-app.post("/newEvent",isLoggedIn,  function(req,res){
-    var event_creator = req.user;
-    var event_kind = req.body.event_kind;
-    console.log("event_creator: ", event_creator );
-    console.log("event_kind: ", event_kind );
+app.post("/newEvent", isLoggedIn,  function(req,res){
+    var event_creator = req.user.user_first_name + " " + req.user.user_last_name;
+    var event_kind = req.body.sport;
+    var event_city =  req.body.city;
+    var event_date = req.body.date;
+    var creator_image = req.user.image_path;
+    var event_time = req.body.time;
 
+    var q = "INSERT INTO Events VALUES " +
+        "( NULL , " +  '\"' + event_time + '\"' +  "," + '\"'+  event_kind + '\"' + ","  + '\"' + event_date + '\"' +  "," +  '\"' +  event_city + '\"' + "," + '\"'+  event_creator + '\"' +  "," + '\"'  + creator_image + '\"' + ")";
+
+    console.log(q);
+
+    db.query( q , function(err,rows){
+        if(err) {
+            res.send(err);
+        }
+        else{
+            console.log(rows);
+            res.send(rows);
+        }
+    });
 });
 
 

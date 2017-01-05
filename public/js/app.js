@@ -39,10 +39,10 @@ var app = angular.module('sportivi', [])
                 time: $scope.time
             };
 
-            var url = "";
-
+            var url = "newEvent";
             $http.post(url, data).then(function successCallback(response) {
-                console.log("great")
+                console.log("great, this is the response:")
+                console.log(response);
             }, function errorCallback(response) {
                 console.log("error")
             });
@@ -55,8 +55,7 @@ var app = angular.module('sportivi', [])
         $http.get("/getEvents")
             .then(
                 function(response){
-                    console.log("good");
-                    console.log(response.data);
+                    $scope.events = [];
                     $scope.events = response.data;
                     $scope.colors = [];
                     for ( var i = 0; i < $scope.events.length; i++ ){
@@ -80,8 +79,11 @@ var app = angular.module('sportivi', [])
                             $scope.events[i].event_icon = "static/images/icon_walk.svg"
                         }
 
+
                         $scope.colors.push(color);
                     }
+                    $scope.colors.reverse();
+                    $scope.events.reverse();
                 },
                 function(response){
                     console.log("Error: can't get user details");
@@ -95,16 +97,9 @@ var app = angular.module('sportivi', [])
             $http.get("/getUserDetails")
                 .then(
                     function(response){
-                        console.log("good");
-                        console.log(response.data);
                         $scope.user_first_name = response.data.user_first_name;
                         $scope.user_last_name = response.data.user_last_name;
                         $scope.image_path = response.data.image_path;
-
-                        console.log($scope.user_first_name);
-                        console.log($scope.user_last_name);
-                        console.log($scope.image_path);
-
 
                     },
                     function(response){
@@ -117,7 +112,6 @@ var app = angular.module('sportivi', [])
     })
     .controller('profileCtrl', function($scope) {
 
-        $scope.students = ["Dani,AMit"];
     })
     .controller('divOptionsController', function($scope) {
 
