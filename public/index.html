@@ -11,15 +11,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/feedController.js"></script>
+    <script>
+    	// function greeting() {
 
-    <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+    	var d = new Date();
+		var n = d.getHours();
+		alert(n)
+		if(n > 6 && n < 12) {
+			alert("morning");
+		} else if(n > 12 && n < 16){
+			alert("afternoon");
+		} else if(n > 16 && n < 21){
+			alert("evening");
+		} else {
+			alert("night");
+			var myValue = $("#greet");
+			alert(myValue);
+		}
+		
+    	
+
+	</script>
+
 </head>
 <body ng-controller="feedCtrl">
 <nav class="navbar navbar-inverse">
@@ -30,25 +43,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#"><img src="images/hackathon-07.svg" height="25px" mergin-left="50px"></a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Messages</a></li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="Search..">
-                    <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-                </div>
-            </form>
+        <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+            	<li><a href="#"><img src="images/hackathon-02.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img src="images/hackathon-03.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img src="images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img src="images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img src="images/hackathon-06.svg" height="25px" mergin-left="50px"></a></li>
+                <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li> -->
             </ul>
         </div>
     </div>
@@ -57,29 +61,18 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-sm-3 well">
-            <div class="well">
-                <p><a href="#">My Profile</a></p>
-                <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-            </div>
-            <div class="well">
-                <p><a href="#">Interests</a></p>
-                <p>
-                    <span class="label label-default">News</span>
-                    <span class="label label-primary">W3Schools</span>
-                    <span class="label label-success">Labels</span>
-                    <span class="label label-info">Football</span>
-                    <span class="label label-warning">Gaming</span>
-                    <span class="label label-danger">Friends</span>
-                </p>
-            </div>
-            <div class="alert alert-success fade in">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                <p><strong>Ey!</strong></p>
-                People are looking at your profile. Find out who.
-            </div>
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
+                <img src="#" class="img-circle" height="65" width="65" alt="Avatar">
+                <br>
+                <p class="text" id="greet">Center aligned text.</p>
+                <p><a href="#">Gil itzhaky</a></p>
+
+
+                <p><strong>Upcoming Activities!</strong></p>
+                <li class="active"><a href="#"><img src="images/hackathon-10.svg"  "></a></li>
+                <li class="active"><a href="#"><img src="images/hackathon-10.svg" "></a></li>
+                <p><strong>Recent Activities!</strong></p>
+                <li class="active"><a href="#"><img src="images/hackathon-10.svg"  "></a></li>
+                <li class="active"><a href="#"><img src="images/hackathon-10.svg"  "></a></li>
         </div>
         <div class="col-sm-7">
 
@@ -160,7 +153,7 @@
                             <input type="date" name="input" ng-model="date"
                                    placeholder="yyyy-MM-dd" min="2013-01-01" required/>
                             <br>In what time?
-                            <input type="time" name="input" ng-model="time" required/>
+                            <input type="time" name="input" id="gil" ng-model="time" required/>
                             <br>Where?
                             <select ng-model="chosenCity" ng-options="city for city in cities">
                                 <option value="">-- choose City --</option>
@@ -183,13 +176,10 @@
             </div>
         </div>
         <div class="col-sm-2 well">
-            <div class="thumbnail">
-                <p>Upcoming Events:</p>
-                <img src="paris.jpg" alt="Paris" width="400" height="300">
-                <p><strong>Paris</strong></p>
-                <p>Fri. 27 November 2015</p>
-                <button class="btn btn-primary">Info</button>
-            </div>
+            
+                <!-- weather widget start --><a href="//www.booked.net/weather/jerusalem-18396"><img src="//w.bookcdn.com/weather/picture/31_18396_1_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_3.png?scode=124&domid=" /></a><!-- weather widget end -->
+            <br>
+            <br>
             <div class="well">
                 <p>ADS</p>
             </div>
@@ -201,7 +191,7 @@
     </div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="footer container-fluid text-center">
     <p>Footer Text</p>
 </footer>
 
