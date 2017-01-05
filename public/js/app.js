@@ -51,15 +51,23 @@ var app = angular.module('sportivi', [])
 
     })
     .controller('greetingsCtrl', function($scope,$http) {
-        $http.post("/getUserDetails")
+        $http.get("/getUserDetails")
             .then(
                 function(response){
                     console.log("good");
-                    console.log(response)
+                    console.log(response.data);
+                    $scope.user_first_name = response.data.user_first_name;
+                    $scope.user_last_name = response.data.user_last_name;
+                    $scope.image_path = response.data.image_path;
+
+                    console.log($scope.user_first_name)
+                    console.log($scope.user_last_name)
+                    console.log($scope.image_path)
+
 
                 },
                 function(response){
-                    console.log("ERROR");
+                    console.log("Error: can't get user details");
                     console.log(response);
                 }
             );
