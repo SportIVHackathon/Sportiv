@@ -13,7 +13,7 @@ var app = angular.module('sportivi', [])
         $scope.ages = ["18 - 24", "25 - 30", "31 - 40", "41+"];
 
         $scope.date = new Date(2010, 11, 28, 14, 57);
-        $scope.date2 = ""
+        $scope.date2 = "";
         $scope.chosenSport = "";
 
         $scope.chosenCity = "";
@@ -50,8 +50,71 @@ var app = angular.module('sportivi', [])
 
 
     })
-    .controller('feed', function($scope, $http) {
+    .controller('feedCtrl', function($scope, $http) {
+        $scope.colors = [];
+        $scope.events = [
+            {
+                event_id:1,
+                event_time: "16:30",
+                event_kind: "bike ride",
+                event_date: "1.1.2017",
+                event_city: "Jerusalem",
+                event_creator: "Amit Arie",
+                creator_image: "static/images/users_images/1.jpg"
+            },
+            {
+                event_id:2,
+                event_time: "07:00",
+                event_date: "2.1.2017",
+                event_kind: "run",
+                event_city: "Jerusalem",
+                event_creator: "Gil Itzhaky",
+                creator_image: "static/images/users_images/3.jpg"
+            },
+            {
+                event_id: 3,
+                event_time: "19:30",
+                event_kind: "yoga_class",
+                event_date: "3.1.2017",
+                event_city: "Jerusalem",
+                event_creator: "Dani Ionin",
+                creator_image: "static/images/users_images/4.jpg"
+            },            {
+                event_id:2,
+                event_time: "07:00",
+                event_date: "2.1.2017",
+                event_kind: "walk",
+                event_city: "Jerusalem",
+                event_creator: "Shana Rotter",
+                creator_image: "static/images/users_images/2.jpg"
+            }
+            ];
 
+        for ( var i = 0; i < $scope.events.length; i++ ){
+            var color = {"background-color": 'red'};
+            if(!$scope.events[i].event_kind.localeCompare("yoga_class")){
+                color = {"background-color": '#3C61A5'};
+                $scope.events[i].event_icon = "static/images/icon_yoga.svg"
+            }
+            else if(!$scope.events[i].event_kind.localeCompare("run")){
+                color = {"background-color": '#8B1E35'};
+                $scope.events[i].event_icon = "static/images/icon_run.svg"
+
+            }
+            else if(!$scope.events[i].event_kind.localeCompare("bike ride")){
+                color = {"background-color": '#EA9047'};
+                $scope.events[i].event_icon = "static/images/icon_bike.svg"
+
+            }
+            else if(!$scope.events[i].event_kind.localeCompare("walk")){
+                color = {"background-color": '#00AAA0'};
+                $scope.events[i].event_icon = "static/images/icon_walk.svg"
+
+            }
+
+
+            $scope.colors.push(color);
+        }
 
     })
     .controller('greetingsCtrl', function($scope,$http) {
@@ -64,9 +127,9 @@ var app = angular.module('sportivi', [])
                     $scope.user_last_name = response.data.user_last_name;
                     $scope.image_path = response.data.image_path;
 
-                    console.log($scope.user_first_name)
-                    console.log($scope.user_last_name)
-                    console.log($scope.image_path)
+                    console.log($scope.user_first_name);
+                    console.log($scope.user_last_name);
+                    console.log($scope.image_path);
 
 
                 },
@@ -90,7 +153,7 @@ var app = angular.module('sportivi', [])
             $scope.showFeed = false;
             $scope.showPost = false;
             $scope.showProfile = true;
-        }
+        };
 
         $scope.toHome = function () {
             $scope.showProfile = false;
@@ -98,6 +161,6 @@ var app = angular.module('sportivi', [])
             $scope.showPost = true;
 
         }
-    })
+    });
 
 
