@@ -48,8 +48,12 @@
 }
 
 input, select{
-    background-color:#666;
-    color: #FFF;
+    background:#666;
+    color: #666;
+}
+.post{
+    border :1px;
+    border-color:#9b9b9b;
 }
 
 .footer {
@@ -61,3 +65,10 @@ input, select{
   background-color: #efefef;
   text-align: center;
 }
+
+.alert{
+    background-color: white;
+    border : 0;
+}
+
+

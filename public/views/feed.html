@@ -3,15 +3,21 @@
     <tr ng-repeat = "event in events">
         <td>
             <div ng-style="colors[$index]" style="text-align:left;color:white;width:485px;height:120px" class="well well-lg">
-                <span style="float: left"><img style="float: left;width:80px;height: 80px;border-radius: 50%;margin-right: 5%;" src={{event.creator_image}}></span>
+                <div class="col-sm-2">
+                    <span style="float: left"><img style="float: left;width:80px;height: 80px;border-radius: 50%;margin-right: 5%;" src={{event.creator_image}}></span>
+                </div>
+                <div class="col-sm-7">
 
                 <div style="margin-left: 24%">
                      <b>{{event.event_creator}}</b> is going for a {{event.event_kind}} <br>
                             {{event.event_time}} at  {{event.event_date}} <br>
                             in {{event.event_city}}
-                    <img style="border-radius: 50%; width:60px;height: 60px;  background-color: white;"src={{event.event_icon}}>
+
 
                 </div>
+                </div>
+                <div class="col-sm-3">
+                <img style="border-radius: 50%; width:75px;height: 75px;  background-color: white;"src={{event.event_icon}}></div>
                 <span style="float: right;">
 
                 </span>
