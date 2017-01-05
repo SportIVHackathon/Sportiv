@@ -65,7 +65,7 @@
         <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right">
 
-            	<li><a href="#"><img ng-src="images/hackathon-02.svg" height="28px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img ng-src="images/hackathon-02.svg" height="28px" mergin-left="50px" ng-click="toHome()"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-03.svg" height="25px" mergin-left="50px" ng-click="toProfile()"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
             	<li><a href="#"><img ng-src="images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
@@ -87,11 +87,11 @@
                 <br>
 
                 <p><strong>Upcoming Activities!</strong></p>
-                <a href="#"><img src="images/hackathon-10.svg"  "></a>
-                <a href="#"><img src="images/hackathon-10.svg" "></a>
+                <a href="#"><img src="images/hackathon-10.svg"></a>
+                <a href="#"><img src="images/hackathon-10.svg"></a>
                 <p><strong>Recent Activities!</strong></p>
-                <a href="#"><img src="images/hackathon-10.svg"  "></a>
-                <a href="#"><img src="images/hackathon-10.svg"  "></a>
+                <a href="#"><img src="images/hackathon-10.svg"></a>
+                <a href="#"><img src="images/hackathon-10.svg"></a>
             </div>
         </div>
         <div class="col-sm-7">
@@ -168,15 +168,22 @@
 
                 </div>
             </div>
-            <div class="row" >
+            <div class="row">
                 <div class="col-sm-12">
-                    <div class="well">
-                        <div ng-show= "showFeed" ng-include src="'views/feed.html'"></div>
-                        <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
-                        
+
+                        <div ng-include="'static/views/feed.html'"></div>
+
+            <div class="row" >
+                <div class="col-sm-">
+                    <div class="well" ng-show= "showFeed">
+                        <div  ng-include src="'views/feed.html'"></div>
                     </div>
 
+                    <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
+
+
                 </div>
+
             </div>
         </div>
         <div class="col-sm-2 well">
