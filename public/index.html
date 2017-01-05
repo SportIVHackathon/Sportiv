@@ -99,7 +99,7 @@
         </div>
 
         <div class="col-sm-7" >
-    <div style="border:1px solid">
+    <div style="border:1px solid #9b9b9b ;">
             <div class="row" ng-show= "showPost" ng-controller = "postCtrl">
                 <div class="col-sm-9">
                     <div class="alert alert-info">
@@ -177,11 +177,12 @@
                     </div>
                 </div>
                 <div class="col-sm-3 submit">
-                    <img ng-src="images/unnamed.gif"><br><br><br>
+                    <img ng-src="images/unnamed.gif" style="padding-top:30px"><br><br><br>
                     <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
                 </div>
             </div>
             </div>
+            <br>
             <div ng-include="'views/feed.html'" class="col-sm-12"></div>
             <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
         </div>
