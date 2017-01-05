@@ -1,5 +1,4 @@
 
-
 .form-horizontal .control-label{
     /* text-align:right; */
     text-align:left;
@@ -49,6 +48,30 @@
 }
 
 input, select{
-    background-color:#666;
-    color: #FFF;
+    background:#666;
+    color: #666;
+}
+.post{
+    border :1px;
+    border-color:#9b9b9b;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.alert{
+    background-color: white;
+    border : 0;
+}
+
+.well{
+    background-color : #fff;
+    border :0;
 }

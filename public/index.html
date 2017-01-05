@@ -11,6 +11,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-chat/angular-chat.js"></script>
+
     <script>
     	// function greeting() {
 
@@ -94,25 +97,34 @@
                 <a href="#"><img src="images/hackathon-10.svg"></a>
             </div>
         </div>
-        <div class="col-sm-7">
+
+        <div class="col-sm-7" >
+    <div style="border:1px solid #9b9b9b ;">
             <div class="row" ng-show= "showPost" ng-controller = "postCtrl">
                 <div class="col-sm-9">
                     <div class="alert alert-info">
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <strong>Hello, what exercise would you like to do?</strong><br><br>
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-6"><strong>I Would Like to:</strong></div>
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-4">
 
-                    <select class="form-control input-sm" ng-model="chosenSport" ng-options="sport for sport in sports">
-                        <option value="">-- choose sport --</option>
-                     </select>
+                                    <select class="form-control input-sm" ng-model="chosenSport" ng-options="sport for sport in sports">
+                                        <option value="">-- choose sport --</option>
+                                     </select>
+
+                                </div>
 
                                 </div>
                             </div>
                             <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/hackathon-05.svg" height="25px" margin-left="50px">
+                                    <img ng-src="images/icon_clock.svg" height="25px" margin-left="50px">
                                 </div>
                                 <div class="col-sm-4">
                                     <div class='input-group date' id='datetimepicker1'>
@@ -122,22 +134,25 @@
                     </span>
                                     </div>
                                 </div>
+                                    <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
                                     <strong>at</strong>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group clockpicker">
-                                        <input type="text" class="form-control input-sm" value="09:30">
+                                        <input type="text" class="form-control input-sm" ng-model="time" value="09:30">
                                         <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
                                     </div>
 
                                 </div>
+                                </div>
                             </div>
                             <div class="form-group">
+                                <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
+                                    <img ng-src="images/icon_location.svg" height="30px" margin-left="50px">
                                 </div>
                                 <div class="col-sm-4">
 
@@ -146,6 +161,7 @@
                                     </select>
 
                                 </div>
+                                <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
                                     <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
                                 </div>
@@ -160,31 +176,15 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-sm-3">
-
-
-                  <img ng-src="images/icon_edit.svg" width="120" height="120"><br><br><br>
-                    <button type="submit" class="btn btn-primary" ng-click="send()">Submit</button>
-
+                <div class="col-sm-3 submit">
+                    <img ng-src="images/unnamed.gif" style="padding-top:30px"><br><br><br>
+                    <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-
-                        <div ng-include="'static/views/feed.html'"></div>
-
-            <div class="row" >
-                <div class="col-sm-">
-                    <div class="well" ng-show= "showFeed">
-                        <div  ng-include src="'views/feed.html'"></div>
-                    </div>
-
-                    <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
-
-
-                </div>
-
             </div>
+            <br>
+            <div ng-include="'views/feed.html'" class="col-sm-12"></div>
+            <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
         </div>
         <div class="col-sm-2 well">
                 <!-- weather widget start --><a href="//www.booked.net/weather/jerusalem-18396"><img src="//w.bookcdn.com/weather/picture/31_18396_1_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_3.png?scode=124&domid=" /></a><!-- weather widget end -->
@@ -199,12 +199,9 @@
             </div>
         </div>
 
-    </div>
+
 </div>
 
-<footer class="footer container-fluid text-center">
-    <pre id="underline">©JDC Israel 2017                                                                                                   About     Terms of Use     Privacy Policy     <a href="#"><img src="images/icon_jdc.svg" height="25px" mergin-left="50px"></a> </pre>
-</footer>
 
 </body>
 </html>
