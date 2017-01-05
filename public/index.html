@@ -11,9 +11,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-chat/angular-chat.js"></script>
-
     <script>
     	// function greeting() {
 
@@ -42,7 +39,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-    <script src="js/app.js"></script>
+    <script src="static/js/app.js"></script>
 
     <style>
         /* Set black background color, white text and some padding */
@@ -63,16 +60,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="images/hackathon-07.svg" height="25px" mergin-left="50px"></a>
+            <a class="navbar-brand" href="#"><img src="static/images/hackathon-07.svg" height="25px" mergin-left="50px"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right">
 
-            	<li><a href="#"><img ng-src="images/hackathon-02.svg" height="28px" mergin-left="50px" ng-click="toHome()"></a></li>
-            	<li><a href="#"><img ng-src="images/hackathon-03.svg" height="25px" mergin-left="50px" ng-click="toProfile()"></a></li>
-            	<li><a href="#"><img ng-src="images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
-            	<li><a href="#"><img ng-src="images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
-            	<li><a href="#"><img ng-src="images/hackathon-06.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img ng-src="static/images/hackathon-02.svg" height="28px" mergin-left="50px" ng-click="toHome()"></a></li>
+            	<li><a href="#"><img ng-src="static/images/hackathon-03.svg" height="25px" mergin-left="50px" ng-click="toProfile()"></a></li>
+            	<li><a href="#"><img ng-src="static/images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img ng-src="static/images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
+            	<li><a href="#"><img ng-src="static/images/hackathon-06.svg" height="25px" mergin-left="50px"></a></li>
 
             </ul>
         </div>
@@ -90,11 +87,11 @@
                 <br>
 
                 <p><strong>Upcoming Activities!</strong></p>
-                <a href="#"><img src="images/hackathon-10.svg"></a>
-                <a href="#"><img src="images/hackathon-10.svg"></a>
+                <a href="#"><img src="static/images/hackathon-10.svg"></a>
+                <a href="#"><img src="static/images/hackathon-10.svg"></a>
                 <p><strong>Recent Activities!</strong></p>
-                <a href="#"><img src="images/hackathon-10.svg"></a>
-                <a href="#"><img src="images/hackathon-10.svg"></a>
+                <a href="#"><img src="static/images/hackathon-10.svg"></a>
+                <a href="#"><img src="static/images/hackathon-10.svg"></a>
             </div>
         </div>
 
@@ -124,7 +121,7 @@
                                 <div class="rows">
                                     <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/icon_clock.svg" height="25px" margin-left="50px">
+                                    <img ng-src="static/images/icon_clock.svg" height="25px" margin-left="50px">
                                 </div>
                                 <div class="col-sm-4">
                                     <div class='input-group date' id='datetimepicker1'>
@@ -152,7 +149,7 @@
                             <div class="form-group">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/icon_location.svg" height="30px" margin-left="50px">
+                                    <img ng-src="static/images/icon_location.svg" height="30px" margin-left="50px">
                                 </div>
                                 <div class="col-sm-4">
 
@@ -163,7 +160,7 @@
                                 </div>
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-1">
-                                    <img ng-src="images/hackathon-03.svg" height="25px" margin-left="50px">
+                                    <img ng-src="static/images/hackathon-03.svg" height="25px" margin-left="50px">
                                 </div>
                                 <div class="col-sm-4">
 
@@ -177,14 +174,14 @@
                     </div>
                 </div>
                 <div class="col-sm-3 submit">
-                    <img ng-src="images/unnamed.gif" style="padding-top:30px"><br><br><br>
+                    <img ng-src="static/images/unnamed.gif" style="padding-top:30px"><br><br><br>
                     <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
                 </div>
             </div>
             </div>
             <br>
-            <div ng-include="'views/feed.html'" class="col-sm-12"></div>
-            <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
+            <div ng-include="'static/views/feed.html'" class="col-sm-12"></div>
+            <div ng-show="showProfile" ng-include src="'static/views/profile.html'"></div>
         </div>
         <div class="col-sm-2 well">
                 <!-- weather widget start --><a href="//www.booked.net/weather/jerusalem-18396"><img src="//w.bookcdn.com/weather/picture/31_18396_1_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_3.png?scode=124&domid=" /></a><!-- weather widget end -->
