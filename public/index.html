@@ -98,15 +98,13 @@
             </div>
         </div>
 
-        <div class="col-sm-7">
-
+        <div class="col-sm-7" >
+    <div style="border:1px solid">
             <div class="row" ng-show= "showPost" ng-controller = "postCtrl">
                 <div class="col-sm-9">
-
                     <div class="alert alert-info">
                         <form class="form-horizontal">
                             <div class="form-group">
-
                                 <strong>Hello, what exercise would you like to do?</strong><br><br>
                                 <div class="row">
                                     <div class="col-sm-1"></div>
@@ -182,7 +180,7 @@
                     <img ng-src="images/unnamed.gif"><br><br><br>
                     <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
                 </div>
-
+            </div>
             </div>
             <div ng-include="'views/feed.html'" class="col-sm-12"></div>
             <div ng-show="showProfile" ng-include src="'views/profile.html'"></div>
