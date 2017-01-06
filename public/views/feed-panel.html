@@ -1,0 +1,28 @@
+<div ng-controller="feedCtrl" ng-show= "showFeed">
+    <div ng-repeat = "event in events">
+        <div class="row" ng-style="colors[$index]">
+                <div class="big-box"  style=text-align:left;color:white;width:100%;height:70%; >
+                        <div class = "col-sm-2">
+                            <img style="float: left;width:80px;height: 80px;border-radius: 50%;margin-right: 5%;" src={{event.creator_image}}>
+                        </div>
+                        <div class = "col-sm-2">
+                            <div>
+                                <b>{{event.event_creator}}</b> is going for a {{event.event_kind}} <br>
+                                {{event.event_time}} at  {{event.event_date}} <br>
+                                in {{event.event_city}}
+                            </div>
+                        </div>
+                        <div class = "col-sm-2">
+                            <img style="border-radius: 50%; width:75px;height: 75px;  background-color: white;"src={{event.event_icon}}>
+                        </div>
+                </div>
+        </div>
+    </div>
+
+    <!--<table>-->
+        <!--<tr ng-repeat = "event in events">-->
+            <!--<td>-->
+
+        <!--</tr>-->
+    <!--</table>-->
+</div>

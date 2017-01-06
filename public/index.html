@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="sportivi">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Welcome to Sportiv</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,164 +19,26 @@
 
     <script src="static/js/app.js"></script>
 
-    <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-    </style>
-
 </head>
 <body ng-controller="divOptionsController">
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="static/images/hackathon-07.svg" height="25px" mergin-left="50px"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar" >
-            <ul class="nav navbar-nav navbar-right">
 
-            	<li><a href="#"><img ng-src="static/images/hackathon-02.svg" height="28px" mergin-left="50px" ng-click="toHome()"></a></li>
-            	<li><a href="#"><img ng-src="static/images/hackathon-03.svg" height="25px" mergin-left="50px" ng-click="toProfile()"></a></li>
-            	<li><a href="#"><img ng-src="static/images/hackathon-04.svg" height="25px" mergin-left="50px"></a></li>
-            	<li><a href="#"><img ng-src="static/images/hackathon-05.svg" height="25px" mergin-left="50px"></a></li>
-            	<li><a href="#"><img ng-src="static/images/hackathon-06.svg" height="25px" mergin-left="50px"></a></li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container text-center">
+    <navigation-bar></navigation-bar>
     <div class="row">
-        <div class="col-sm-3 well">
-            <div  ng-controller="greetingsCtrl">
-                {{username}}
-                <img src={{image_path}} class="img-circle" height="65" width="65" alt="Avatar">
-                <p class="text" id="greet">Center aligned text.</p>
-                <p id="sideName"><a href="#"><strong>{{user_first_name}} {{user_last_name}}</strong></a></p>
-                <br>
+            <div class="col-sm-3">
 
-                <p><strong>Upcoming Activities!</strong></p>
-                <a href="#"><img src="static/images/hackathon-10.svg"></a>
-                <a href="#"><img src="static/images/hackathon-10.svg"></a>
-                <p><strong>Recent Activities!</strong></p>
-                <a href="#"><img src="static/images/hackathon-10.svg"></a>
-                <a href="#"><img src="static/images/hackathon-10.svg"></a>
+                <profile-panel></profile-panel>
             </div>
-        </div>
 
-        <div class="col-sm-7" >
-    <div style="border:1px solid #9b9b9b ;">
-            <div class="row" ng-show= "showPost" ng-controller = "postCtrl">
-                <div class="col-sm-9">
-                    <div class="alert alert-info">
-                        <form  class="form-horizontal">
-                            <div class="form-group">
-                                <strong>Hello, what exercise would you like to do?</strong><br><br>
-                                <div class="row">
-                                    <div class="col-sm-1"></div>
-                                <div class="col-sm-6"><strong>I Would Like to:</strong></div>
-                                    <div class="col-sm-1"></div>
-                                <div class="col-sm-4">
-
-                                    <select class="form-control input-sm" ng-model="chosenSport" ng-options="sport for sport in sports">
-                                        <option value="">-- choose sport --</option>
-                                     </select>
-
-                                </div>
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="rows">
-                                    <div class="col-sm-1"></div>
-                                <div class="col-sm-1">
-                                    <img ng-src="static/images/icon_clock.svg" height="25px" margin-left="50px">
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' class="form-control input-sm" ng-model="date2">
-                                        <span class="input-group-addon" >
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                                    </div>
-                                </div>
-                                    <div class="col-sm-1"></div>
-                                <div class="col-sm-1">
-                                    <strong>at</strong>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control input-sm" ng-model="time" value="09:30">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </span>
-                                    </div>
-
-                                </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-1">
-                                    <img ng-src="static/images/icon_location.svg" height="30px" margin-left="50px">
-                                </div>
-                                <div class="col-sm-4">
-
-                                    <select class="form-control input-sm" ng-model="chosenCity" ng-options="city for city in cities">
-                                        <option value="">-- choose city --</option>
-                                    </select>
-
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-1">
-                                    <img ng-src="static/images/hackathon-03.svg" height="25px" margin-left="50px">
-                                </div>
-                                <div class="col-sm-4">
-
-                                    <select class="form-control input-sm" ng-model="ageGroup" ng-options="age for age in ages">
-                                        <option value="">-- choose age --</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-sm-3 submit">
-                    <img ng-src="static/images/unnamed.gif" style="padding-top:30px"><br><br><br>
-                    <button type="submit" class="btn btn-primary" ng-click="send()">Post</button>
-                </div>
+            <div class="col-sm-6" >
+                 <post-event-panel></post-event-panel>
+                <feed-panel></feed-panel>
+                <profile-page></profile-page>
             </div>
+
+            <div class="col-sm-3">
+                <right-panel></right-panel>
             </div>
-            <br>
-            <div ng-include="'static/views/feed.html'" class="col-sm-12"></div>
-            <div ng-show="showProfile" ng-include src="'static/views/profile.html'"></div>
-        </div>
-        <div class="col-sm-2 well">
-                <!-- weather widget start --><a href="//www.booked.net/weather/jerusalem-18396"><img src="//w.bookcdn.com/weather/picture/31_18396_1_1_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_3.png?scode=124&domid=" /></a><!-- weather widget end -->
-            <br>
-            <br>
-            <div class="well">
-                <p>JDC Resources</p>
-                <p class="rightMenu">Personal Trainers</p>
-                <p class="rightMenu">Lifestyle Consultation</p>
-                <p class="rightMenu">Sport Equipment</p>
-                <p class="rightMenu">Teams Nearby</p>
-            </div>
-        </div>
-
-
-</div>
-
+    </div>
 
 </body>
 </html>

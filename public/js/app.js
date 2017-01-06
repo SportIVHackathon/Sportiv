@@ -1,8 +1,31 @@
-var app = angular.module('sportivi', [])
+angular.module('sportivi', [])
     .controller('chatCtrl', function($scope) {
 
-    })
-    .controller('postCtrl', function($scope, $http) {
+    }).directive('navigationBar', function() {
+        return {
+            templateUrl: 'static/views/navigation-bar-panel.html'
+
+    }}).directive('profilePanel', function() {
+        return {
+            templateUrl: 'static/views/profile-panel.html'
+
+    }}).directive('postEventPanel', function() {
+    return {
+        templateUrl: 'static/views/post-event-panel.html'
+
+    }}).directive('feedPanel', function() {
+        return {
+            templateUrl: 'static/views/feed-panel.html'
+
+    }}).directive('rightPanel', function() {
+    return {
+        templateUrl: 'static/views/right-panel.html'
+
+    }}).directive('profilePage', function() {
+    return {
+        templateUrl: 'static/views/profile-page.html'
+
+    }}).controller('postCtrl', function($scope, $http) {
 
         $scope.posts = ["Walk", "Play Football", "Basketball"];
 
@@ -18,7 +41,7 @@ var app = angular.module('sportivi', [])
 
         $scope.chosenCity = "";
 
-        $scope.time = ""
+        $scope.time = "";
 
         $scope.ageGroup = "";
 
@@ -53,8 +76,7 @@ var app = angular.module('sportivi', [])
         }
 
 
-    })
-    .controller('feedCtrl', function($scope, $http) {
+    }).controller('feedCtrl', function($scope, $http) {
 
         $http.get("/getEvents")
             .then(
@@ -63,34 +85,35 @@ var app = angular.module('sportivi', [])
                     angular.extend($scope.events,response.data);
 
                     $scope.colors = [];
+                    var color = {"margin-bottom" : '5%', "border-radius" : "10%"};
+
                     for ( var i = 0; i < $scope.events.length; i++ ){
-                        var color = {"background-color": 'red'};
                         if(!$scope.events[i].event_kind.localeCompare("Yoga Class")){
-                            color = {"background-color": '#3C61A5'};
+                            color["background-color"] = '#3C61A5';
                             $scope.events[i].event_icon = "static/images/icon_yoga.svg"
                         }
                         else if(!$scope.events[i].event_kind.localeCompare("Run")){
-                            color = {"background-color": '#8B1E35'};
+                            color["background-color"] = '#8B1E35';
                             $scope.events[i].event_icon = "static/images/icon_run.svg"
 
                         }
                         else if(!$scope.events[i].event_kind.localeCompare("Bike Ride")){
-                            color = {"background-color": '#EA9047'};
+                            color["background-color"] = '#EA9047';
                             $scope.events[i].event_icon = "static/images/icon_bike.svg"
 
                         }
                         else if(!$scope.events[i].event_kind.localeCompare("Walk")){
-                            color = {"background-color": '#00AAA0'};
+                            color["background-color"] = '#00AAA0';
                             $scope.events[i].event_icon = "static/images/icon_walk.svg"
                         }
 
                         else if(!$scope.events[i].event_kind.localeCompare("Football")){
-                            color = {"background-color": '#47aa47'};
+                            color["background-color"] = '#47aa47';
                             $scope.events[i].event_icon = "static/images/footballiCon.png"
                         }
 
                         else if(!$scope.events[i].event_kind.localeCompare("Basketball")){
-                            color = {"background-color": '#aa160f'};
+                            color["background-color"] = '#aa160f';
                             $scope.events[i].event_icon = "static/images/basketBall.png"
                         }
 
@@ -104,8 +127,7 @@ var app = angular.module('sportivi', [])
                     console.log(response);
                 }
             );
-    })
-    .controller('greetingsCtrl', function($scope,$http) {
+    }).controller('greetingsCtrl', function($scope,$http) {
 
         setInterval(function(){
             $http.get("/getUserDetails")
@@ -123,11 +145,10 @@ var app = angular.module('sportivi', [])
                 );
         },3000)
 
-    })
-    .controller('profileCtrl', function($scope) {
+    }).controller('profileCtrl', function($scope) {
 
-    })
-    .controller('divOptionsController', function($scope) {
+
+    }).controller('divOptionsController', function($scope) {
 
         $scope.showFeed = true;
         $scope.showPost = true;
