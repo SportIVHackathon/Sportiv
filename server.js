@@ -57,7 +57,11 @@ app.post('/login', passport.authenticate('local-login', {
             req.session.cookie.expires = false;
         }
         res.send({success:true});
-    });
+});
+
+app.get("/signup", function(req,res){
+    res.sendFile(path.join(__dirname + '/public/signup.html'));
+});
 
 app.get('/logout', function(req, res) {
     req.logout();
